@@ -1,4 +1,4 @@
-# realee
+# RealEE
 
 Mod RealEE per il server RGBcraft (Minecraft 1.4.7)
 Aggiunge numerosi oggetti volti ad aumentare il realismo.
