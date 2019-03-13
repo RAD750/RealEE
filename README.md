@@ -1,4 +1,6 @@
 # RealEE
+![immagine](https://user-images.githubusercontent.com/12469744/54308589-9791b900-45ce-11e9-8f7e-3925c4a730e9.png)
+Parco eolico off-shore MarX Energy al largo di Lynnfield
 
 Mod RealEE per il server RGBcraft (Minecraft 1.4.7)
 Aggiunge numerosi oggetti volti ad aumentare il realismo.
