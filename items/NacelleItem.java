@@ -5,18 +5,18 @@ import net.minecraft.item.Item;
 
 public class NacelleItem extends Item
 {
-    public static final String name = "Wind Generator";
-
-    public NacelleItem(int id)
-    {
-        super(id);
-        this.iconIndex = 26;
-        this.setItemName(name);
-        this.setCreativeTab(RGBCore.OthersTab);
-    }
-
-    public String getTextureFile()
-    {
-        return "/rgbmod/rgb.png";
-    }
+  public static final String name = "Wind Generator";
+  
+  public NacelleItem(int id)
+  {
+    super(id);
+    iconIndex = 26;
+    setItemName("Wind Generator");
+    setCreativeTab(RGBCore.OthersTab);
+  }
+  
+  public String getTextureFile()
+  {
+    return "/rgbmod/rgb.png";
+  }
 }

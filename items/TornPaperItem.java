@@ -3,15 +3,15 @@ package it.lor54.rgb.items;
 import it.lor54.rgb.RGBCore;
 import net.minecraft.item.Item;
 
-public class PalaItem extends Item
+public class TornPaperItem extends Item
 {
-  public static final String name = "Wind Turbine Blades";
+  public static final String name = "Torn Paper";
   
-  public PalaItem(int id)
+  public TornPaperItem(int id)
   {
     super(id);
-    iconIndex = 27;
-    setItemName("Wind Turbine Blades");
+    iconIndex = 5;
+    setItemName("Torn Paper");
     setCreativeTab(RGBCore.OthersTab);
   }
   
