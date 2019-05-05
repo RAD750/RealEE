@@ -10,30 +10,29 @@ import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-
-public class SavaraDisk
+public class ArrakisDisk
   extends ItemRecord
 {
-  public String recordName = "savara";
-  public static final String name = "Inno Savara";
+  public String recordName = "arrakis";
+  public static final String name = "Inno Arrakis";
   
-  public SavaraDisk(int id)
+  public ArrakisDisk(int id)
   {
-    super(id, "cat");
+    super(id, "arrakis");
     setCreativeTab(RGBCore.OthersTab);
     maxStackSize = 1;
-    recordName = "savara";
-    iconIndex = 21;
-  }
-  
-  public String getRecordTitle()
-  {
-    return "C418 - " + recordName;
+    iconIndex = 19;
+    recordName = "arrakis";
   }
   
   public String getTextureFile()
   {
     return "/rgbmod/rgb.png";
+  }
+  
+  public String getRecordTitle()
+  {
+    return "C418 - " + recordName;
   }
   
   public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
@@ -61,6 +60,6 @@ public class SavaraDisk
 
   public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
   {
-    par3List.add("Inno Savara");
+    par3List.add("Inno Arrakis");
   }
 }
