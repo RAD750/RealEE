@@ -7,18 +7,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-public class Uranium5DualItem
+public class MoxQuadItem
   extends Item implements IReactorComponent
 {
-  public static final String name = "Sligthly Enriched Uranium Dual Cell";
-  public int damage = 7450;
+  public static final String name = "MOX Quad Cell";
+  public int damage = 8749;
   
-  public Uranium5DualItem(int id)
+  public MoxQuadItem(int id)
   {
     super(id);
     maxStackSize = 1;
-    iconIndex = 14;
-    setItemName("Sligthly Enriched Uranium Dual Cell");
+    iconIndex = 18;
+    setItemName("MOX Quad Cell");
     setCreativeTab(RGBCore.RealEETab);
     setMaxDamage(damage);
   }
@@ -32,7 +32,7 @@ public class Uranium5DualItem
     
     int pulses = 1;
     acceptUraniumPulse(reactor, yourStack, yourStack, x, y, x, y);
-    int heat = pulses * 4 * 2;
+    int heat = pulses * 4 * 2 * 4;
     
     if (heat > 0) {
       reactor.addHeat(heat);
@@ -71,7 +71,7 @@ public class Uranium5DualItem
   
   public boolean acceptUraniumPulse(IReactor reactor, ItemStack yourStack, ItemStack pulsingStack, int youX, int youY, int pulseX, int pulseY)
   {
-    reactor.addOutput(8);
+    reactor.addOutput(60);
     return true;
   }
   
@@ -97,7 +97,7 @@ public class Uranium5DualItem
   
   public float influenceExplosion(IReactor reactor, ItemStack yourStack)
   {
-    return 4.0F;
+    return 8.0F;
   }
   
   public String getTextureFile()
