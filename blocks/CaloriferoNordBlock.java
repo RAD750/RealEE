@@ -1,7 +1,7 @@
 package it.lor54.rgb.blocks;
 
 import it.lor54.rgb.RGBCore;
-import it.lor54.rgb.entities.TileEntityCaloriferoSud;
+import it.lor54.rgb.entities.TileEntityCaloriferoNord;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -11,25 +11,27 @@ import net.minecraft.world.World;
 
 
 
-public class CaloriferoSudBlock
+
+
+public class CaloriferoNordBlock
   extends BlockContainer
 {
-  public static final String name = "Calorifero Sud";
+  public static final String name = "Calorifero Nord";
   
-  public CaloriferoSudBlock(int id, int texture)
+  public CaloriferoNordBlock(int id, int texture)
   {
     super(id, Material.rock);
     setHardness(2.0F);
     setResistance(15.0F);
     setStepSound(Block.soundStoneFootstep);
     setCreativeTab(RGBCore.OthersTab);
-    setBlockName("Calorifero Sud");
+    setBlockName("Calorifero Nord");
     blockIndexInTexture = 22;
   }
   
   public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z)
   {
-    setBlockBounds(0.0F, 0.0F, 0.72F, 1.0F, 1.0F, 1.0F);
+    setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.27F);
   }
   
 
@@ -73,6 +75,6 @@ public class CaloriferoSudBlock
   
   public TileEntity createTileEntity(World world, int meta)
   {
-    return new TileEntityCaloriferoSud();
+    return new TileEntityCaloriferoNord();
   }
 }

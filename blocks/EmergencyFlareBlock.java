@@ -10,32 +10,18 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class EmergencyFlareLitBlock
+public class EmergencyFlareBlock
   extends Block
 {
-  public static final String name = "Emergency Flare Lit";
+  public static final String name = "Emergency Flare";
   
-  public EmergencyFlareLitBlock(int par1, int texture)
+  public EmergencyFlareBlock(int par1, int texture)
   {
     super(par1, 211, Material.redstoneLight);
-    setLightValue(1.0F);
+    setLightValue(0.0F);
     setCreativeTab(RGBCore.RealEETab);
-    setBlockName("Emergency Flare Lit");
-    blockIndexInTexture = 4;
+    setBlockName("Emergency Flare");
+    blockIndexInTexture = 3;
   }
   
   public String getTextureFile()
@@ -47,17 +33,17 @@ public class EmergencyFlareLitBlock
   {
     if ((side == 0) || (side == 1))
     {
-      return blockIndexInTexture;
+      return blockIndexInTexture + 7;
     }
     
 
     if ((side == 2) || (side == 3))
     {
-      return blockIndexInTexture + 6;
+      return blockIndexInTexture;
     }
     
 
-    return blockIndexInTexture + 6;
+    return blockIndexInTexture;
   }
   
 
@@ -67,6 +53,8 @@ public class EmergencyFlareLitBlock
 
   public void onBlockAdded(final World par1World, final int par2, final int par3, final int par4)
   {
+    par1World.setBlock(par2, par3, par4, Blocks.emergencyFlareLit.blockID);
+    
     if (!par1World.isRemote)
     {
       new Timer().schedule(new TimerTask()
@@ -90,6 +78,8 @@ public class EmergencyFlareLitBlock
 
   public void onNeighborBlockChange(final World par1World, final int par2, final int par3, final int par4, int par5)
   {
+    par1World.setBlock(par2, par3, par4, Blocks.emergencyFlareLit.blockID);
+    
     if (!par1World.isRemote)
     {
       new Timer().schedule(new TimerTask()
@@ -106,13 +96,22 @@ public class EmergencyFlareLitBlock
 
 
 
+  public void onChunkLoad() {}
+  
 
+
+
+  public int quantityDropped(Random rand)
+  {
+    return 1;
+  }
+  
 
 
 
   public int idDropped(int par1, Random par2Random, int par3)
   {
-    return blockID;
+    return Blocks.emergencyFlare.blockID;
   }
   
 
@@ -123,10 +122,5 @@ public class EmergencyFlareLitBlock
   public int idPicked(World par1World, int par2, int par3, int par4)
   {
     return Blocks.emergencyFlare.blockID;
-  }
-  
-  public int quantityDropped(Random rand)
-  {
-    return 0;
   }
 }
