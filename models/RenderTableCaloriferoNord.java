@@ -1,33 +1,31 @@
 package it.lor54.rgb.models;
 
-import javax.swing.Renderer;
-
-import org.lwjgl.opengl.GL11;
-
-import it.lor54.rgb.models.ModelCaloriferoBlock;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
+import org.lwjgl.opengl.GL11;
 
-public class RenderTableCaloriferoNord extends TileEntitySpecialRenderer 
-{	
-	private ModelCaloriferoNord calorifero;
-	
-	public RenderTableCaloriferoNord()
-	{
-		calorifero = new ModelCaloriferoNord();
-	}
 
-	@Override
-	public void renderTileEntityAt(TileEntity var1, double x, double y, double z, float scale) {	
-		GL11.glPushMatrix();
-		
-		GL11.glTranslated(x+0.5, y+1.5, z+0.5);
-		GL11.glRotatef(180, 0, 0, 1);
-		this.bindTextureByName("/rgbmod/calorifero.png");
-		this.calorifero.render((Entity)null, 0, -0.1f, 0, 0, 0, 0.0625f);
-		GL11.glPopMatrix();
-	}
 
+
+public class RenderTableCaloriferoNord
+  extends TileEntitySpecialRenderer
+{
+  private ModelCaloriferoNord calorifero;
+  
+  public RenderTableCaloriferoNord()
+  {
+    calorifero = new ModelCaloriferoNord();
+  }
+  
+  public void renderTileEntityAt(TileEntity var1, double x, double y, double z, float scale)
+  {
+    GL11.glPushMatrix();
+    
+    GL11.glTranslated(x + 0.5D, y + 1.5D, z + 0.5D);
+    GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
+    bindTextureByName("/rgbmod/calorifero.png");
+    calorifero.render((Entity)null, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F, 0.0625F);
+    GL11.glPopMatrix();
+  }
 }
-

@@ -8,14 +8,14 @@ import org.lwjgl.opengl.GL11;
 
 
 
-public class RenderTableCaloriferoEst
+public class RenderTableCaloriferoSud
   extends TileEntitySpecialRenderer
 {
-  private ModelCaloriferoBlock calorifero;
+  private ModelCaloriferoNord calorifero;
   
-  public RenderTableCaloriferoEst()
+  public RenderTableCaloriferoSud()
   {
-    calorifero = new ModelCaloriferoBlock();
+    calorifero = new ModelCaloriferoNord();
   }
   
   public void renderTileEntityAt(TileEntity var1, double x, double y, double z, float scale)
