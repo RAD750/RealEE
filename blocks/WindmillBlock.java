@@ -2,10 +2,14 @@ package it.lor54.rgb.blocks;
 
 import it.lor54.rgb.entities.WindmillTileEntity;
 import java.util.Random;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -23,6 +27,19 @@ public class WindmillBlock
     setCreativeTab(null);
     setBlockName("Windmill Block");
     Block.useNeighborBrightness[blockID] = true;
+  }
+  
+  public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+  {
+	  this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
+      return super.getCollisionBoundingBoxFromPool(par1World, par2, par3, par4);
+  }
+  
+  @SideOnly(Side.CLIENT)
+  public AxisAlignedBB getSelectedBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+  {
+      this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
+      return super.getSelectedBoundingBoxFromPool(par1World, par2, par3, par4);
   }
   
   public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z)

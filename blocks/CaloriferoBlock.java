@@ -1,5 +1,7 @@
 package it.lor54.rgb.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import it.lor54.rgb.RGBCore;
 import it.lor54.rgb.entities.TileEntityCaloriferoBlock;
 import net.minecraft.block.Block;
@@ -9,12 +11,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 
-public class CaloriferoBlock
-  extends BlockContainer
+public class CaloriferoBlock extends BlockContainer
 {
   public static final String name = "Calorifero";
   
@@ -33,6 +35,19 @@ public class CaloriferoBlock
   public int getRenderType()
   {
     return -1;
+  }
+  
+  public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+  {
+	  this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
+      return super.getCollisionBoundingBoxFromPool(par1World, par2, par3, par4);
+  }
+  
+  @SideOnly(Side.CLIENT)
+  public AxisAlignedBB getSelectedBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+  {
+      this.setBlockBoundsBasedOnState(par1World, par2, par3, par4);
+      return super.getSelectedBoundingBoxFromPool(par1World, par2, par3, par4);
   }
   
   public void setBlockBoundsBasedOnState(IBlockAccess blockAccess, int x, int y, int z)
@@ -58,8 +73,6 @@ public class CaloriferoBlock
       setBlockBounds(0.0F, 0.0F, 0.72F, 1.0F, 1.0F, 1.0F);
     }
   }
-  
-
 
   public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity)
   {

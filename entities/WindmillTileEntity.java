@@ -6,8 +6,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 
-public class WindmillTileEntity
-  extends TileEntity
+public class WindmillTileEntity extends TileEntity
 {
   private boolean enabled = true;
   public float rotation = 0.0F;
@@ -19,9 +18,7 @@ public class WindmillTileEntity
   private boolean cambia = false; private boolean day = true;
   public double var = 0.0D; public double vento = 1.0D;
   private int random = 3;
-  
-  public WindmillTileEntity() {}
-  
+    
   public void updateEntity()
   {
     if (enabled)
